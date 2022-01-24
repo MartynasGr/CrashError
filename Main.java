@@ -34,22 +34,14 @@ public class Main {
 
 			}
 		}
-		// Map<String, Integer> types = new HashMap<String, Integer>();
 		for (String name : hm.keySet()) {
 			System.out.println(name);
 			ArrayList<FileError> typeList = new ArrayList<FileError>();
 
-			// Map<String, Integer> types = new HashMap<String, Integer>();
 			ArrayList<FileError> errors = hm.get(name);
-			// WriteFile(errors, name.toString());
-
 			for (int i = 0; i < errors.size(); i++) {
 				FileError key;
-				// if (errors.get(i).lastIndexOf(']') + 2 > errors.get(i).length()) {
-				key = errors.get(i);// .substring(errors.get(i).indexOf(']') + 1);
-				// } else {
-				// key = errors.get(i).substring(errors.get(i).lastIndexOf(']') + 1);
-				// }
+				key = errors.get(i);
 				boolean found = false;
 				int count = 0;
 				while (!found) {
@@ -64,10 +56,6 @@ public class Main {
 							typeList.get(count).count++;
 							break;
 						}
-					} /*else {
-						key.count = 1;
-						typeList.add(key);
-					}*/
 					count++;
 					
 					if (count >= typeList.size()) {
@@ -82,7 +70,6 @@ public class Main {
 					System.out.println(typeList.get(z).errors.get(j)+" ");
 				}
 			}
-			// typeList.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
 		}
 	}
 
